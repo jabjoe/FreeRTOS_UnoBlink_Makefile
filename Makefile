@@ -39,9 +39,6 @@ $(FREERTOSOBJS): FreeRTOS/%.o: $(FREERTOSDIR)/%.c
 	$(MKDIR) $(dir $@)
 	$(CC) $(CFLAGS) -c -o "$@" "$<" 
 
-%.o : %.c
-	$(CC) $< $(CFLAGS) -c -o $@
-
 main.elf: $(OBJS) $(FREERTOSOBJS) $(FREERTOSASMS)
 	$(CC) $(LDFLAGS) -o $@ $^
 
